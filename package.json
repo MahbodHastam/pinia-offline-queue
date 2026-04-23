@@ -1,0 +1,91 @@
+{
+  "name": "pinia-offline-queue",
+  "version": "1.0.0",
+  "description": "Nuxt module for offline-first Pinia action queuing with auto-sync on reconnect",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mahbodhastam/offline-queue-pinia.git"
+  },
+  "homepage": "https://github.com/mahbodhastam/offline-queue-pinia#readme",
+  "bugs": {
+    "url": "https://github.com/mahbodhastam/offline-queue-pinia/issues"
+  },
+  "license": "MIT",
+  "type": "module",
+  "packageManager": "pnpm@10.29.3",
+  "engines": {
+    "node": "^20.19.0 || ^22.12.0 || >=24.0.0"
+  },
+  "keywords": [
+    "nuxt",
+    "pinia",
+    "offline",
+    "queue",
+    "pwa"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/types.d.mts",
+      "import": "./dist/module.mjs"
+    }
+  },
+  "main": "./dist/module.mjs",
+  "typesVersions": {
+    "*": {
+      ".": [
+        "./dist/types.d.mts"
+      ]
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prepack": "nuxt-module-build build",
+    "dev": "npm run dev:prepare && nuxt dev playground",
+    "dev:build": "nuxt build playground",
+    "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxt prepare playground",
+    "release": "npm run lint && npm run test && npm run test:types && npm run prepack && changelogen --release && npm publish && git push --follow-tags",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:watch": "vitest watch",
+    "test:types": "vue-tsc --noEmit && cd playground && vue-tsc --noEmit"
+  },
+  "dependencies": {
+    "@nuxt/kit": "^4.4.2",
+    "idb": "^8.0.3"
+  },
+  "peerDependencies": {
+    "@pinia/nuxt": "^0.11.2 || ^1.0.0",
+    "@vite-pwa/nuxt": "^1.0.0",
+    "nuxt": "^4.4.2",
+    "pinia": "^2.1.7 || ^3.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@vite-pwa/nuxt": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "^3.2.4",
+    "@nuxt/eslint-config": "^1.15.2",
+    "@nuxt/module-builder": "^1.0.2",
+    "@nuxt/schema": "^4.4.2",
+    "@nuxt/test-utils": "^4.0.2",
+    "@types/node": "^25.6.0",
+    "changelogen": "^0.6.2",
+    "eslint": "^10.2.1",
+    "fake-indexeddb": "^6.2.5",
+    "jsdom": "^27.0.1",
+    "nuxt": "^4.4.2",
+    "vue": "^3.5.22",
+    "typescript": "~6.0.3",
+    "vitest": "^4.1.4",
+    "vue-tsc": "^3.2.7"
+  },
+  "pnpm": {
+    "overrides": {
+      "serialize-javascript": "^7.0.5"
+    }
+  }
+}

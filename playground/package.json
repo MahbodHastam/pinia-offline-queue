@@ -1,0 +1,17 @@
+{
+  "private": true,
+  "name": "pinia-offline-queue-playground",
+  "type": "module",
+  "scripts": {
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@pinia/nuxt": "^0.11.2",
+    "@vite-pwa/nuxt": "^1.1.0",
+    "pinia": "^3.0.3",
+    "pinia-offline-queue": "workspace:*",
+    "nuxt": "^4.4.2"
+  }
+}
