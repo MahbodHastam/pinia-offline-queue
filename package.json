@@ -4,11 +4,11 @@
   "description": "Nuxt module for offline-first Pinia action queuing with auto-sync on reconnect",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mahbodhastam/offline-queue-pinia.git"
+    "url": "https://github.com/mahbodhastam/pinia-offline-queue.git"
   },
-  "homepage": "https://github.com/mahbodhastam/offline-queue-pinia#readme",
+  "homepage": "https://github.com/mahbodhastam/pinia-offline-queue#readme",
   "bugs": {
-    "url": "https://github.com/mahbodhastam/offline-queue-pinia/issues"
+    "url": "https://github.com/mahbodhastam/pinia-offline-queue/issues"
   },
   "license": "MIT",
   "type": "module",
